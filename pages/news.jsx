@@ -1,10 +1,9 @@
-import HealthSection from "@/components/Home/HealthSection";
 import NewsCard from "@/components/Home/NewsCard";
 import SubTitle from "@/components/Utilities/SubTitle";
 import Image from "next/image";
 import Link from "next/link";
 
-const news = () => {
+const News = () => {
   return (
     <main>
       <div className="container">
@@ -170,4 +169,4 @@ const news = () => {
   );
 };
 
-export default news;
+export default News;

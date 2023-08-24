@@ -1,24 +1,21 @@
+import { useEffect, useState } from "react";
 import Header from "./Header/Header";
 import Footer from "./Footer";
-import { useEffect, useState } from "react";
-import Loading from "./Utilities/Loading";
+import LoadingPage from "./Utilities/LoadingPage";
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-  // }, []);
-
-  // if (loading) {
-  //   return <Loading />;
-  // }
+  useEffect(() => {
+    setTimeout(() => {
+      // setLoading(false);
+    }, 2000);
+  }, []);
 
   return (
     <>
       <Header />
+      {/* {loading && <LoadingPage />} */}
       {children}
       <Footer />
     </>

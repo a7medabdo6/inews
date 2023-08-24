@@ -4,7 +4,7 @@ import SubTitle from "@/components/Utilities/SubTitle";
 import NewsCard from "@/components/Home/NewsCard";
 import PaginationComponent from "@/components/Utilities/PaginationComponent";
 
-const policy = () => {
+const Policy = () => {
   return (
     <div className="container">
       <TitlePage title="سياسة" />
@@ -52,4 +52,4 @@ const policy = () => {
   );
 };
 
-export default policy;
+export default Policy;

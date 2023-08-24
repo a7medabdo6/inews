@@ -1,8 +1,7 @@
 import Condition from "@/components/Conditions/Condition";
 import SubTitle from "@/components/Utilities/SubTitle";
-import React from "react";
 
-const termsAndConditions = () => {
+const TermsAndConditions = () => {
   return (
     <main>
       <div className="container">
@@ -54,4 +53,4 @@ const termsAndConditions = () => {
   );
 };
 
-export default termsAndConditions;
+export default TermsAndConditions;

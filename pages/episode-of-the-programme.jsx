@@ -1,8 +1,8 @@
-import NewsCard from "@/components/Home/NewsCard";
+import VideoNewsCard from "@/components/Home/VideoNewsCard";
 import SubTitle from "@/components/Utilities/SubTitle";
 import TitlePage from "@/components/Utilities/TitlePage";
 
-const episodeOfTheProgramme = () => {
+const EpisodeOfTheProgramme = () => {
   return (
     <main>
       <div className="container">
@@ -15,9 +15,9 @@ const episodeOfTheProgramme = () => {
             </div>
 
             <div className="col-lg-5">
-              <h3 className="line-height-50 fw-semibold mb-4">
+              <h5 className="line-height-50 fw-semibold mb-3">
                 خدمت مع وزير الدفاع الحالي ولحد الان ما حصلت على قطعة ارض
-              </h3>
+              </h5>
               <p className="line-height-35">
                 لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل
                 ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه ، وعند
@@ -25,7 +25,7 @@ const episodeOfTheProgramme = () => {
                 ويتم وضع النصوص النهائية المطلوبة . لوريم ايبسوم هو نموذج
                 افتراضي يوضع في التصاميم لتعرض على العميل .
               </p>
-              <div className="date mt-5 text-gray">
+              <div className="date mt-4 text-gray">
                 16 مايو 2023 الساعة الرابعة مساءًا
               </div>
             </div>
@@ -41,40 +41,46 @@ const episodeOfTheProgramme = () => {
 
           <div className="row mt-4">
             <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_11.png"} />
+              <VideoNewsCard img={"/images/img_11.png"} />
             </div>
             <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_12.png"} />
+              <VideoNewsCard img={"/images/img_12.png"} />
             </div>
             <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_13.png"} />
+              <VideoNewsCard img={"/images/img_13.png"} />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-6 col-lg-4 mb-3">
+              <VideoNewsCard img={"/images/img_11.png"} />
             </div>
             <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_12.png"} />
+              <VideoNewsCard img={"/images/img_12.png"} />
             </div>
             <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_13.png"} />
+              <VideoNewsCard img={"/images/img_13.png"} />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-6 col-lg-4 mb-3">
+              <VideoNewsCard img={"/images/img_11.png"} />
             </div>
             <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_11.png"} />
+              <VideoNewsCard img={"/images/img_12.png"} />
             </div>
             <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_11.png"} />
+              <VideoNewsCard img={"/images/img_13.png"} />
+            </div>
+          </div>
+          <div className="row mt-4">
+            <div className="col-md-6 col-lg-4 mb-3">
+              <VideoNewsCard img={"/images/img_11.png"} />
             </div>
             <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_12.png"} />
+              <VideoNewsCard img={"/images/img_12.png"} />
             </div>
             <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_13.png"} />
-            </div>
-            <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_12.png"} />
-            </div>
-            <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_13.png"} />
-            </div>
-            <div className="col-md-6 col-lg-4 mb-3">
-              <NewsCard img={"/images/img_11.png"} />
+              <VideoNewsCard img={"/images/img_13.png"} />
             </div>
           </div>
         </div>
@@ -83,4 +89,4 @@ const episodeOfTheProgramme = () => {
   );
 };
 
-export default episodeOfTheProgramme;
+export default EpisodeOfTheProgramme;

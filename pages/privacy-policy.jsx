@@ -1,7 +1,7 @@
 import Condition from "@/components/Conditions/Condition";
 import SubTitle from "@/components/Utilities/SubTitle";
 
-const privacyPolicy = () => {
+const PrivacyPolicy = () => {
   return (
     <main>
       <div className="container">
@@ -52,4 +52,4 @@ const privacyPolicy = () => {
   );
 };
 
-export default privacyPolicy;
+export default PrivacyPolicy;

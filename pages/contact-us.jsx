@@ -1,7 +1,7 @@
 import SubTitle from "@/components/Utilities/SubTitle";
 import Image from "next/image";
 
-const contactUs = () => {
+const ContactUs = () => {
   return (
     <main>
       <div className="container">
@@ -109,4 +109,4 @@ const contactUs = () => {
   );
 };
 
-export default contactUs;
+export default ContactUs;

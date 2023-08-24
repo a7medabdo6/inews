@@ -2,7 +2,7 @@ import SubTitle from "@/components/Utilities/SubTitle";
 import About from "@/components/WhoWe/About";
 import Image from "next/image";
 
-const whoAreWe = () => {
+const WhoAreWe = () => {
   return (
     <main>
       <div className="container">
@@ -82,4 +82,4 @@ const whoAreWe = () => {
   );
 };
 
-export default whoAreWe;
+export default WhoAreWe;

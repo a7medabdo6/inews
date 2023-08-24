@@ -1,6 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import BreakingNewsSection from "@/components/Home/BreakingNewsSection";
 import LiveSection from "@/components/Home/LiveSection";
 import LatestNewsSection from "@/components/Home/LatestNewsSection";
@@ -14,7 +11,7 @@ import NotificationsModal from "@/components/Utilities/NotificationsModal";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [showNotify, setShowNotify] = useState(true);
+  const [showNotify, setShowNotify] = useState(false);
 
   const handleNotifactionsOnSite = async () => {
     if (!window.Notification) {
@@ -40,7 +37,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    handleNotifactionsOnSite();
+    // handleNotifactionsOnSite();
   }, []);
 
   return (
@@ -67,7 +64,7 @@ export default function Home() {
         bg="/images/bg_1.png"
         bgColor="rgba(111, 100, 2, 0.70)"
         img="/images/img_9.png"
-        title="الغن"
+        title="الرياضة"
         color="#FFD930"
         text="white"
       />

@@ -1,27 +1,19 @@
-import NewsCard from "@/components/Home/NewsCard";
+import VideoNewsCard from "@/components/Home/VideoNewsCard";
 import Table from "@/components/Live/Table";
 import SubTitle from "@/components/Utilities/SubTitle";
 import TitlePage from "@/components/Utilities/TitlePage";
 
-const live = () => {
+const Live = () => {
   return (
     <main>
       <div className="container">
         <TitlePage title="البث الحي" />
 
         <div className="p-4 pt-1 bg-white">
-          <div className="row">
-            <div className="col-lg-12">
-              <video
-                style={{
-                  width: "100%",
-                  height: "430px",
-                }}
-                src="/videos/video.mp4"
-                controls
-              ></video>
-            </div>
-          </div>
+          <iframe
+            src="https://player.l1vetv.com/inewstv/"
+            allowFullScreen
+          ></iframe>
         </div>
 
         <div className="my-5">
@@ -37,23 +29,23 @@ const live = () => {
         <SubTitle title="المزيد من الغيديوهات" color="#D30707" more={false} />
 
         <div className="row mt-4">
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_11.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_11.png"} />
           </div>
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_12.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_12.png"} />
           </div>
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_13.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_13.png"} />
           </div>
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_12.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_12.png"} />
           </div>
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_13.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_13.png"} />
           </div>
-          <div className="col-md-6 col-lg-4 mb-3">
-            <NewsCard img={"/images/img_11.png"} />
+          <div className="col-md-6 col-lg-4 mb-5">
+            <VideoNewsCard img={"/images/img_11.png"} />
           </div>
         </div>
 
@@ -80,4 +72,4 @@ const live = () => {
   );
 };
 
-export default live;
+export default Live;

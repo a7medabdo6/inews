@@ -1,7 +1,7 @@
 import Breaking from "@/components/Breaking/Breaking";
 import TitlePage from "@/components/Utilities/TitlePage";
 
-const breakingNews = () => {
+const BreakingNews = () => {
   return (
     <main>
       <div className="container">
@@ -24,4 +24,4 @@ const breakingNews = () => {
   );
 };
 
-export default breakingNews;
+export default BreakingNews;
