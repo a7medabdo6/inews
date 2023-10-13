@@ -8,16 +8,21 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      // setLoading(false);
+      setLoading(false);
     }, 2000);
   }, []);
 
   return (
     <>
-      <Header />
-      {/* {loading && <LoadingPage />} */}
-      {children}
-      <Footer />
+      {loading ? (
+        <LoadingPage />
+      ) : (
+        <>
+          <Header />
+          {children}
+          <Footer />
+        </>
+      )}
     </>
   );
 };

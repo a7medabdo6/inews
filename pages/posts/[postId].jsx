@@ -1,9 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
+import baseUrl from "@/baseUrl";
 import NewsCard from "@/components/Home/NewsCard";
 import SubTitle from "@/components/Utilities/SubTitle";
 import Image from "next/image";
 import Link from "next/link";
 
-const News = () => {
+const News = ({ data }) => {
   return (
     <main>
       <div className="container">
@@ -19,57 +21,25 @@ const News = () => {
                 سياسة | السودان
               </h6>
               <h4 className="mt-4 mb-3 fw-semibold line-height-50">
-                السوداني يؤكد على اهمية دعم الاتحاد الاوروبي لجهود الحكومة في
-                مكافحة الفساد
+                {data?.title_ar}
               </h4>
               <div className="date text-gray">
                 16 مايو 2023 الساعة الرابعة مساءًا
               </div>
 
-              <Image
+              <img
                 className="mt-4"
-                src="/images/img_22.png"
-                alt=""
+                src={data?.thumbnail}
+                alt={data?.title_ar}
                 width={1000}
                 height={300}
               />
 
               <div className="text mt-4">
-                <p className="mb-4 line-height-35">
-                  أكد رئيس مجلس الوزراء محمد شياع السوداني، اليوم السبت، على
-                  أهمية دعم الاتحاد الأوروبي لجهود الحكومة في مكافحة الفساد
-                  واسترداد المطلوبين والأموال المسروقة.
-                </p>
-                <p className="mb-4 line-height-35">
-                  وذكر بيان للمكتب الإعلامي لرئيس مجلس الوزراء، أن رئيس الوزراء
-                  التقى في مقرّ إقامته، رئيسة المفوضية الأوروبية أورسال
-                  فوندرالين، وذلك على هامش مشاركته في مؤتمر ميونخ للأمن بدورته
-                  الـ 59، حيث جرى خلال اللقاء استعراض العلاقات بين العراق ومجمل
-                  دول الاتحاد الأوروبي.
-                </p>
-                <p className="mb-4 line-height-35">
-                  وأكد السوداني، رغبة العراق في عقد شراكات تنموية متطوّرة مع دول
-                  الاتحاد في مختلف المجالات، مبيناً أن لقاءاته بقادة ألمانيا
-                  وفرنسا وإيطاليا تأتي على مسار التعاون الاقتصادي، وبناء أواصر
-                  التعاون لمواجهة التحديات الاقتصادية وتأثيرات التغيّر المناخي
-                  وبناء الاستقرار والتنمية المستدامة.
-                </p>
-                <p className="mb-4 line-height-35">
-                  وأشار إلى الاتفاقية الإطارية بين وزارة المالية وبنك الاستثمار
-                  الأوروبي، والانفتاح على استثمارات الشركات الأوروبية ومساهمتها
-                  في القطاع الخدمي بالعراق، مؤكداً على أهمية دعم الاتحاد
-                  الأوروبي جهود الحكومة في مكافحة الفساد واسترداد المطلوبين
-                  والأموال المسروقة.
-                </p>
-                <p className="mb-4 line-height-35">
-                  من جانبها أعربت فوندرالين عن دعمها رئيس الوزراء وقرارته
-                  الإصلاحية، وعن إقبال عموم دول الاتحاد الأوروبي على التعاون
-                  والتبادل مع العراق، في ظلّ الشراكات طويلة الأمد.
-                </p>
-                <p className="mb-4 line-height-35">
-                  وأشارت إلى جدية الدول الأوروبية في إيجاد شراكات حقيقية في
-                  مجالات الطاقة والطاقة المتجددة.
-                </p>
+                <p
+                  className="mb-4 line-height-35"
+                  dangerouslySetInnerHTML={{ __html: data?.content_ar }}
+                />
               </div>
             </div>
           </div>
@@ -137,11 +107,7 @@ const News = () => {
         </div>
 
         <div className="mt-5">
-          <SubTitle
-            title="أخبار ذات صلةأخبار ذات صلة"
-            color="#D30707"
-            more={false}
-          />
+          <SubTitle title="أخبار ذات صلة" color="#D30707" more={false} />
 
           <div className="row mt-4">
             <div className="col-md-6 col-lg-4 mb-3">
@@ -170,3 +136,11 @@ const News = () => {
 };
 
 export default News;
+
+export const getServerSideProps = async (context) => {
+  const { data } = await baseUrl.get(
+    `http://vps97897.serveur-vps.net/posts/${context.params.postId}`
+  );
+
+  return { props: { data } };
+};

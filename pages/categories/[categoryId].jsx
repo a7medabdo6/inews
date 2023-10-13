@@ -3,21 +3,16 @@ import BreakingNewsSection from "@/components/Home/BreakingNewsSection";
 import SubTitle from "@/components/Utilities/SubTitle";
 import NewsCard from "@/components/Home/NewsCard";
 import PaginationComponent from "@/components/Utilities/PaginationComponent";
+import baseUrl from "@/baseUrl";
 
-const Policy = () => {
+const CategoryDetails = ({ data }) => {
   return (
     <div className="container">
-      <TitlePage title="سياسة" />
-
+      <TitlePage title={data?.results[0]?.category?.name} />
       <div>
-        <BreakingNewsSection img="/images/img_21.png" />
-        <BreakingNewsSection img="/images/img_21.png" />
-        <BreakingNewsSection img="/images/img_21.png" />
-        <BreakingNewsSection img="/images/img_21.png" />
-        <BreakingNewsSection img="/images/img_21.png" />
-        <BreakingNewsSection img="/images/img_21.png" />
-        <BreakingNewsSection img="/images/img_21.png" />
-        <BreakingNewsSection img="/images/img_21.png" />
+        {data?.results?.map((item) => {
+          return <BreakingNewsSection key={item?.id} data={item} />;
+        })}
       </div>
 
       <div className="mt-5">
@@ -52,4 +47,12 @@ const Policy = () => {
   );
 };
 
-export default Policy;
+export default CategoryDetails;
+
+export const getServerSideProps = async (context) => {
+  const { data } = await baseUrl.get(
+    `http://vps97897.serveur-vps.net/posts/?category=${context.params.categoryId}`
+  );
+
+  return { props: { data } };
+};
