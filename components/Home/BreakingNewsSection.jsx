@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
 import Link from "next/link";
 
 const BreakingNewsSection = ({ data, urgent = false }) => {
@@ -57,7 +56,14 @@ const BreakingNewsSection = ({ data, urgent = false }) => {
           />
 
           <div className="date mt-5 text-gray">
-            16 مايو 2023 الساعة الرابعة مساءًا
+            {new Date(data?.created_at).toLocaleDateString("ar-eg", {
+              weekday: "long",
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+              hour: "numeric",
+              minute: "numeric",
+            })}
           </div>
         </div>
       </Link>

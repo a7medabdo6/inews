@@ -19,6 +19,7 @@ export default function Home({
   economic_news,
   various_artistic_news,
   international_news,
+  breaking_news,
 }) {
   const [showNotify, setShowNotify] = useState(false);
 
@@ -56,7 +57,7 @@ export default function Home({
       <SocialMediaIcons />
 
       <div className="container ">
-        <BreakingNewsSection img="/images/img_1.png" urgent={true} />
+        <BreakingNewsSection data={breaking_news.results[0]} urgent={true} />
         <LiveSection />
         <LatestNewsSection
           title={"أخر الأخبار"}
@@ -132,6 +133,10 @@ export async function getServerSideProps() {
   const { data: horoscope_news } = await baseUrl.get(
     "http://vps97897.serveur-vps.net/posts/?category=8&sort=-id"
   );
+  const { data: breaking_news } = await baseUrl.get(
+    "http://vps97897.serveur-vps.net/posts/?urgent=true"
+  );
+  console.log(breaking_news);
   return {
     props: {
       latest_news,
@@ -142,6 +147,7 @@ export async function getServerSideProps() {
       various_artistic_news,
       international_news,
       horoscope_news,
+      breaking_news,
     },
   };
 }

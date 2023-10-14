@@ -24,7 +24,14 @@ const News = ({ data }) => {
                 {data?.title_ar}
               </h4>
               <div className="date text-gray">
-                16 مايو 2023 الساعة الرابعة مساءًا
+                {new Date(data?.created_at).toLocaleDateString("ar-eg", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                  hour: "numeric",
+                  minute: "numeric",
+                })}
               </div>
 
               <img
