@@ -5,7 +5,7 @@ const BreakingNewsSection = ({ data, urgent = false }) => {
   return (
     <section className="border-top bg-white p-4 animate-section">
       <Link href={`/posts/${data?.id}`} className="row">
-        <div className="col-lg-6">
+        <div className="col-lg-5">
           <div className="position-relative">
             <div
               className="overlay position-absolute w-100 h-100 d-flex justify-content-center align-items-center overflow-hidden z-1"
@@ -45,7 +45,7 @@ const BreakingNewsSection = ({ data, urgent = false }) => {
             </span>
           </div>
         </div>
-        <div className="col-lg-6">
+        <div className="col-lg-7">
           <h6 className="text-black mb-4 mt-3 fs-6">حرب روسيا و أوكرانيا</h6>
           <h5 className="line-height-35 fw-bold mb-4">{data?.title_ar}</h5>
           <p
